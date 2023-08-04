@@ -54,9 +54,11 @@ public:
     class CPed* m_last_driver; //0x0CC8
     char pad_0CD0[0x6A0]; //0x0CD0
     uint32_t m_door_lock_status; //0x1370
-    char pad_1374[0xDC]; //0x1374
+    char pad_1374[1676]; //0x1374
+    uint32_t m_signature; //0x1A00
+    char pad_1A04[76]; //0x1A04
 
     float get_speed() { return sqrt(m_velocity.x * m_velocity.x + m_velocity.y * m_velocity.y + m_velocity.z * m_velocity.z); }
 };
-static_assert(sizeof(CVehicle) == 0x1450);
+static_assert(sizeof(CVehicle) == 0x1A50);
 #pragma pack(pop)
